@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Aegis — O Despertar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="loginScreen" class="screen forest">
+  <div class="login-box">
+    <h1>RASGO DA FENDA</h1>
+    <button onclick="enterApp()">Entrar</button>
+  </div>
+</section>
+
+<section id="app" class="hidden">
+  <header>
+    <button onclick="show('menu')">Menu</button>
+    <button onclick="show('create')">Criar</button>
+    <button onclick="show('characters')">Personagens</button>
+    <button onclick="show('dice')">Dados</button>
+  </header>
+
+  <section id="menu" class="screen forest-night">
+    <h1>A Fenda observa.</h1>
+  </section>
+
+  <section id="create" class="screen hidden">
+    <div class="paper">
+      <h2 id="formTitle">Criar Personagem</h2>
+
+      <input id="charName" placeholder="Nome do Personagem">
+      <textarea id="appearance" placeholder="Aparência"></textarea>
+      <textarea id="history" placeholder="História"></textarea>
+      <textarea id="goal" placeholder="Ambição"></textarea>
+
+      <h3>Perícias (200 pontos)</h3>
+      <div id="skills"></div>
+      <p>Pontos restantes: <span id="points"></span></p>
+
+      <button onclick="saveCharacter()">Salvar</button>
+    </div>
+  </section>
+
+  <section id="characters" class="screen hidden">
+    <div class="paper">
+      <h2>Personagens</h2>
+      <div id="charList"></div>
+    </div>
+  </section>
+
+  <section id="dice" class="screen hidden">
+    <div class="paper">
+      <h2>Teste d100</h2>
+      <select id="diceChar"></select>
+      <select id="diceSkill"></select>
+      <button onclick="rollDice()">Rolar</button>
+      <div id="diceResult"></div>
+    </div>
+  </section>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
